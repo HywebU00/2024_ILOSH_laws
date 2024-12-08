@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+.npMenu {
+  .swiperArrow {
+    position: absolute;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0px;
+    margin: 0;
+    border-radius: 0;
+    background: #ccc;
+    border-radius: 50%;
+    opacity: 1 !important;
+    border: none;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s linear;
+
+    &::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      display: block;
+      border: 3px #fff solid;
+      border-width: 2px 2px 0 0;
+      background: none;
+      transform: rotate(45deg);
+      margin: 0 3px 0 0;
+    }
+
+    &.prevSlider {
+      left: 0px;
+
+      &::before {
+        transform: rotate(-135deg);
+        margin: 0 0 0 3px;
+      }
+    }
+
+    &.nextSlider {
+      right: 0px;
+    }
+
+    &.swiperArrow-disabled {
+      opacity: 0.3;
+    }
+
+    &:hover {
+      background: #000;
+    }
+  }
+
+  .listBox {
+    // display: flex;
+    // list-style: none;
+    // gap: 20px;
+    padding: 0 30px;
+    position: relative;
+
+    .item {
+      // width: calc((100% - 20px * 6)/7);
+      padding: 3px;
+
+      a {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        gap: 20px;
+        padding-bottom: 20px;
+        position: relative;
+        transition: all 0.2s linear;
+
+        &::before {
+          content: '';
+          position: absolute;
+          height: 6px;
+          width: 0;
+          left: 50%;
+          bottom: 0;
+          opacity: 0;
+          transform: translateX(-50%);
+          display: block;
+          background: $colorPrimary;
+          transition: all 0.2s linear;
+        }
+
+        &:hover {
+          &::before {
+            width: 60%;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    i {
+      width: 100%;
+      max-width: 100px;
+      margin: 0 auto;
+      display: block;
+      aspect-ratio: 1;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+
+      img {
+        height: auto !important;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-weight: 600;
+      font-size: 21px;
+      text-align: center;
+      color: #000;
+    }
+  }
+}

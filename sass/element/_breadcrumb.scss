@@ -1,0 +1,32 @@
+.breadcrumb {
+  font-size: 0.813em;
+  margin: 0px auto;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+
+  ul {
+    @include liReset;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    li {
+      margin: 0px 0.1em 0.1em 0px;
+
+      & + li {
+        &:before {
+          @extend %slash;
+        }
+      }
+    }
+  }
+
+  a {
+    color: #fff;
+
+  }
+}
