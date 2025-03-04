@@ -168,6 +168,7 @@ window.addEventListener('load', () => {
     slidesPerView: 2,
     spaceBetween: 30,
     loop: false,
+    centerInsufficientSlides: true,
     // 切換箭頭
     navigation: {
       nextEl: '.npMenu .nextSlider', //自行設定樣式
